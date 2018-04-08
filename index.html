@@ -26,7 +26,7 @@
 
                 }  
                  tr {
-                   background: pink;
+                   background: black;
 
                 }  
 
@@ -43,7 +43,7 @@
                   z-index: 999;
              }
 
-             button{
+             button , input{
                     font-family: arial;
                     font-weight: bold;
                     border: 5px solid black;
@@ -70,40 +70,47 @@
   </form>
 
   <br>
-  <button onclick="ar()">Try it</button>
+  <button onclick="ar()">CREATE</button>
   <br>
+  <input type="button" value="CLEAR" onClick="window.location.reload()">
+  <br>
+
 <table id="myTable" border="1">
    
 </table>
 <br>
 
 <script type="text/javascript">
+	 
   
   function ar(){
-    var myRows = document.getElementById("rows").value;
+  	var myRows = document.getElementById("rows").value;
     var myColumns = document.getElementById("columns").value;
     var buttonGenerateHolder = document.getElementById("button_generate_holder");
+   
     console.log(myRows,myColumns);  
     //crearte ele table
     //for loop on rows (create row)
     
       var table = document.getElementById("myTable");
+
+      
+
     for (var i = 0; i <myRows; i++) {
       var row = table.insertRow(i);
       for (var j = 0; j <myColumns; j++) {
-      var cell1 = row.insertCell(j);
-     // cell1.innerHTML = i*j;
+     	 var cell1 = row.insertCell(j);
+     	  cell1.innerHTML = i*j;
         }
     }
       }
+
+    
+
+ 
+
+      
+
 </script>
-
-
-
-
-
-	
-	
-
 </body>
 </html>
